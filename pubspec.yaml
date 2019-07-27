@@ -1,8 +1,8 @@
 name: sorted_timeline
 description: A Flutter timeline package that able to sort timeline components.
 version: 0.0.1
-author:
-homepage:
+author: Onat Çipli<ciplionat35@gmail.com>
+homepage: https://github.com/onatcipli/sorted_timeline
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
