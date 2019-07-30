@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sorted_timeline/draw_timeline.dart';
 import 'package:sorted_timeline/sorted_timeline.dart';
 
 void main() => runApp(MyApp());
@@ -39,10 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 100,
           ),
           Center(
-            child: CustomPaint(
-              painter: DrawTimeline(),
-              child: SortedTimeline(),
-            ),
+            child: SortedTimeline(),
           ),
         ],
       ),
