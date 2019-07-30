@@ -30,26 +30,38 @@ class _SortedTimelineState extends State<SortedTimeline> {
       child: CustomPaint(
         painter: DrawTimeline(),
         child: Container(
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Column(
-                  children: timelineItems.map((TimelineItem timelineItem) {
-                    return Icon(Icons.arrow_right);
-                  }).toList(),
+          child: Column(
+              children: timelineItems.map((TimelineItem timelineItem) {
+            return Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Row(
+                    children: <Widget>[
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+                          child: Tooltip(
+                            child: Text(
+                              '${timelineItem.time.day} / ${timelineItem.time.month} / ${timelineItem.time.year}',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            message:
+                                '${timelineItem.time.day} / ${timelineItem.time.month} / ${timelineItem.time.year}',
+                          ),
+                        ),
+                      ),
+                      Icon(Icons.arrow_right),
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(
-                flex: 3,
-                child: Column(
-                  children: timelineItems.map((TimelineItem timelineItem) {
-                    return timelineItem.itemBuilder(context);
-                  }).toList(),
-                ),
-              ),
-            ],
-          ),
+                Expanded(
+                  flex: 3,
+                  child: timelineItem.itemBuilder(context),
+                )
+              ],
+            );
+          }).toList()),
         ),
       ),
     );
