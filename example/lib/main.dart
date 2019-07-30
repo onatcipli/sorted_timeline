@@ -38,27 +38,25 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             height: 100,
           ),
-          Center(
-            child: SortedTimeline(
-              timelineItems: <TimelineItem>[
-                TimelineItem(
-                    time: DateTime.now(),
-                    itemBuilder: (context) {
-                      return Text('Item builder widget Here ');
-                    }),
-                TimelineItem(
-                    time: DateTime.now(),
-                    itemBuilder: (context) {
-                      return Text('Item builder widget Here ');
-                    }),
-                TimelineItem(
-                    time: DateTime.now(),
-                    itemBuilder: (context) {
-                      return Text('Item builder widget Here ');
-                    })
-              ],
-            ),
-          ),
+          SortedTimeline(
+            timelineItems: <TimelineItem>[
+              TimelineItem(
+                  time: DateTime.now(),
+                  itemBuilder: (context) {
+                    return Text('Item builder first Here ');
+                  }),
+              TimelineItem(
+                  time: DateTime.now(),
+                  itemBuilder: (context) {
+                    return Text('Item builder widget Here ');
+                  }),
+              TimelineItem(
+                  time: DateTime.now(),
+                  itemBuilder: (context) {
+                    return Text('Item builder widget Here ');
+                  })
+            ],
+          )
         ],
       ),
     );
