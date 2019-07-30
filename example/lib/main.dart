@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sorted_timeline/sorted_timeline.dart';
+import 'package:sorted_timeline/timeline_item.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,7 +39,25 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 100,
           ),
           Center(
-            child: SortedTimeline(),
+            child: SortedTimeline(
+              timelineItems: <TimelineItem>[
+                TimelineItem(
+                    time: DateTime.now(),
+                    itemBuilder: (context) {
+                      return Text('Item builder widget Here ');
+                    }),
+                TimelineItem(
+                    time: DateTime.now(),
+                    itemBuilder: (context) {
+                      return Text('Item builder widget Here ');
+                    }),
+                TimelineItem(
+                    time: DateTime.now(),
+                    itemBuilder: (context) {
+                      return Text('Item builder widget Here ');
+                    })
+              ],
+            ),
           ),
         ],
       ),
