@@ -41,20 +41,25 @@ class _MyHomePageState extends State<MyHomePage> {
           SortedTimeline(
             timelineItems: <TimelineItem>[
               TimelineItem(
-                  time: DateTime.now(),
+                  time: DateTime.now().add(Duration(days: 1)),
                   itemBuilder: (context) {
-                    return Text('Item builder first Here ');
+                    return Text('Item builder 1 day Here ');
+                  }),
+              TimelineItem(
+                  time: DateTime.now().add(Duration(hours: 1)),
+                  itemBuilder: (context) {
+                    return Text('Item builder 1 hour Here ');
+                  }),
+              TimelineItem(
+                  time: DateTime.now().add(Duration(hours: 2)),
+                  itemBuilder: (context) {
+                    return Text('Item builder 2 hour Here ');
                   }),
               TimelineItem(
                   time: DateTime.now(),
                   itemBuilder: (context) {
-                    return Text('Item builder widget Here ');
+                    return Text('Item builder now Here ');
                   }),
-              TimelineItem(
-                  time: DateTime.now(),
-                  itemBuilder: (context) {
-                    return Text('Item builder widget Here ');
-                  })
             ],
           )
         ],
